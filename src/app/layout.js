@@ -1,4 +1,5 @@
 import "./globals.css";
+import '../components/home/home.css';
 import { Sora } from "next/font/google";
 import Navbar from "@/components/shared/Navbar";
 
