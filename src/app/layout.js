@@ -1,12 +1,19 @@
 import "./globals.css";
 import '../components/home/home.css';
-import { Sora } from "next/font/google";
+import { DM_Sans, Sora, Syne } from "next/font/google";
 import Navbar from "@/components/shared/Navbar";
 
-const sora = Sora({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800']
+export const sora = Sora({
+  subsets: ['latin']
 })
+
+export const dm_sans = DM_Sans({
+  subsets: ['latin']
+});
+
+export const syne = Syne({
+  subsets: ['latin']
+});
 
 export const metadata = {
   title: "Create Next App",
