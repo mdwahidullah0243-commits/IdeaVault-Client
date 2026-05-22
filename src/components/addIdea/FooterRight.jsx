@@ -1,7 +1,7 @@
 import { steps } from "@/lib/data";
 
 
-const FooterRight = ({ step, next }) => {
+const FooterRight = ({ step, next, setIsPublishIdea }) => {
     return (
         <div className="flex gap-2.5 items-center">
             {/* stepCount */}
@@ -18,7 +18,7 @@ const FooterRight = ({ step, next }) => {
                     </button>
                     :
                     // btnPublish
-                    <button type="submit" className="bg-[#e8b84b] text-[#1A1A2E] font-bold text-sm py-3 px-5.5 border-none rounded-lg cursor-pointer">
+                    <button onClick={() => setIsPublishIdea('publish')} type="submit" className="bg-[#e8b84b] text-[#1A1A2E] font-bold text-sm py-3 px-5.5 border-none rounded-lg cursor-pointer">
                         🚀 Publish Idea
                     </button>
             }

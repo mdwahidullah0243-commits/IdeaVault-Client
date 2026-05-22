@@ -5,10 +5,12 @@ import CardFooter from "./CardFooter";
 import DetailsPanel from "./DetailsPanel";
 import SolutionPanel from "./SolutionPanel";
 import ReviewPanel from "./ReviewPanel";
+import { redirect } from "next/navigation";
 
 const FormCard = ({ step, setStep }) => {
     const [errors, setErrors] = useState({});
     const [form, setForm] = useState(formInfo);
+    const [isPublishIdea, setIsPublishIdea] = useState('');
 
     const set = (key, value) => {
         setForm(field => ({ ...field, [key]: value }));
@@ -48,9 +50,25 @@ const FormCard = ({ step, setStep }) => {
         }
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(form);
+        
+        if(isPublishIdea === 'publish') {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/idea`, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(form)
+            });
+            const data = await res.json();
+            
+            if(data.insertedId) {
+                alert(`${form.title} Idea successfully added`);
+                
+                redirect('/ideas');
+            }
+        }
     }
 
     return (
@@ -82,7 +100,7 @@ const FormCard = ({ step, setStep }) => {
                 </div>
 
                 {/* Footer Nav */}
-                <CardFooter step={step} setStep={setStep} next={next} />
+                <CardFooter step={step} setStep={setStep} next={next} setIsPublishIdea={setIsPublishIdea} />
             </form>
         </div>
     );

@@ -57,6 +57,7 @@ export const steps = ["Basics", "Details", "Solution", "Review"];
 export const categories = ["Tech", "Health", "AI", "Education", "Finance", "Environment", "Social", "E-Commerce", "SaaS", "Other"];
 export const tagSuggestions = ["mobile", "web", "B2B", "B2C", "marketplace", "automation", "open-source"];
 export const budgetRanges = ["$1,000", "$1,000 – $10,000", "$10,000 – $50,000", "$50,000 – $200,000", "$200,000+", "No Budget"];
+export const CATEGORIES = ["All", "HealthTech", "Logistics", "EdTech", "CleanTech", "FoodTech", "Productivity"];
 
 export const formInfo = {
     title: "",

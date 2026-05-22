@@ -32,7 +32,7 @@ const Banner = () => {
     return (
         <div>
             {/* BANNER */}
-            <section className="relative overflow-hidden min-h-140 flex items-center">
+            <div className="relative overflow-hidden min-h-140 flex items-center">
                 {/* Animated bg */}
                 <div className={`absolute inset-0 bg-[${slide.bg}] transition-colors duration-800 ease-[ease]`} />
                 <div className={`absolute inset-0`} style={animatedBg} />
@@ -53,7 +53,7 @@ const Banner = () => {
                         {slide.img}
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     );
 };

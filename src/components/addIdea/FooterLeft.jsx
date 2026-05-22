@@ -9,7 +9,8 @@ const FooterLeft = ({step, setStep}) => {
             {
                 step > 0 && (
                     // btnSecondary
-                    <button 
+                    <button
+                        type="button" 
                         className="bg-[#ffffff0f] text-[#ffffff80] text-sm py-3 px-4 border-[0.5px] border-[#ffffff1f] rounded-lg cursor-pointer flex items-center gap-2" 
                         onClick={prev}>
                         <FaArrowLeftLong /> Back
